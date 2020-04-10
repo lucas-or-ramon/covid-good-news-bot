@@ -1,0 +1,9 @@
+# Don't track content of these files
+.secrets.py
+*.ipynb
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
