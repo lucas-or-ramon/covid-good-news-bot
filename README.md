@@ -1,11 +1,11 @@
 <p align="center">
-  <img alt="Logo" src="https://github.com/isafloriano/covid-good-news-bot/logo-covid-19-bot.png">
+  <img alt="Logo" src="./logo-covid-19-bot.png">
 </p>
 
 # COVID-19 Good News Bot
 
 <p align="center">
-  <img alt="Python" src="https://img.shields.io/github/pipenv/locked/python-version/isafloriano/covid-good-news-bot">
+  <img alt="Python" src="https://img.shields.io/badge/python-3.8.2-brightgreen">
   <img alt="Twilio Sandbox" src="https://img.shields.io/badge/twilio-sandbox-brightgreen">
   <img alt="Whatsapp" src="https://img.shields.io/badge/messenger-whatsapp-brightgreen">
   <img alt="AWS Lambda" src="https://img.shields.io/badge/aws-lambda-brightgreen">
