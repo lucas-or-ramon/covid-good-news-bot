@@ -109,7 +109,7 @@ news = get_news (news_org_api_key, 'covid')
 
 #good words bow
 positive_words = ['bom', 'boa', 'bons', 'boas', 'feliz', 'felizes', 'positiva', 'alegre', 'alegria', 'amor', 'esperança',
-                  'doar', 'doação', 'doam', 'aplauso', 'aplausos']
+                  'doar', 'doação', 'doam', 'doa', 'melhora', 'melhor', 'aplauso', 'aplausos', 'exemplo']
 
 filter_news = filter_news(news, positive_words)
 
