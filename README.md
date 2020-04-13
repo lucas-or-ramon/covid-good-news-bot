@@ -31,8 +31,9 @@ news_org_api_key = 'XXXXXXXXXXXX'
 twilio_account_sid = 'XXXXXXXXXXXX'
 twilio_auth_token = 'XXXXXXXXXXXX'
 
-#contacts to receive messages
-contact_dict = {'contact' 'whatsapp:+0000000000000'}
+#dictionary with contacts to receive messages
+contact_dict = {'contact1': 'whatsapp:+0000000000000', 
+                'contact2': 'whatsapp:+0000000000000'}
 ```
 
 1. In `whatsapp.py` change the News API variables to get what you want - check News API
