@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="./logo-covid-19-bot.png">
+  <img alt="Logo - COVID-19 Good News Bot" src="./logo-covid-19-bot.png">
 </h1>
 
 <p align="center">
@@ -16,88 +16,61 @@ a little bit the other ones?
 
 ## Getting Started
 
-This is a simple Python script to send a WhatsApp message using News API and Twilio sandbox.  
-To run it every day at a certain time, I added the code on the AWS (Amazon Web Services) cloud.
+This is a simple Python script to send a WhatsApp message using **News API** and **Twilio Sandbox**.  
+To run it every day at a certain time, I added the code on the **AWS** (Amazon Web Services) cloud.
 
-### Prerequisites
+## Running this project  
 
-- [Python 3](https://www.python.org/) installed
-- Your API key from [News API](https://newsapi.org/)
-- Your sandbox settings from [Twilio](https://www.twilio.com/)
-- [AWS]()
+Clone or download this repository and create your `secrets.py` file:
 
-```
-Give examples
-```
+```python
+#from https://newsapi.org/
+news_org_api_key = 'XXXXXXXXXXXX'
 
-### Installing
+#from https://www.twilio.com/
+twilio_account_sid = 'XXXXXXXXXXXX'
+twilio_auth_token = 'XXXXXXXXXXXX'
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+#contacts to receive messages
+contact_dict = {'contact' 'whatsapp:+0000000000000'}
 ```
 
-And repeat
+1. In `whatsapp.py` change the News API variables to get what you want - check News API
+[documentation](https://newsapi.org/docs) for all options:
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```python
+news = newsapi.get_everything(q=key_word, #keywords to search
+                              from_param=yesterday, #start date to start the search
+                              to=today, #end date to the search
+                              language='pt', #news' language i.e. 'en' = English, 'es' = Spanish
+                              sort_by='relevancy',
+                              page=1)
 ```
 
-### And coding style tests
+2. Change the `send_good_news function` with your Twilio Sandbox number: `from_='whatsapp:+14155238886'`.
+Check Twilio's [documentation](https://www.twilio.com/docs/whatsapp/api) for more information.
 
-Explain what these tests test and why
+3. Change the list of good news with the words you find relevant.
 
-```
-Give an example
-```
+4. Now, unzip the `aws-lambda-deployment.zip` folder, update the files changed, and zip the folder again.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To run the script everyday, I added the script to **AWS Lambda Services**. To do that, I uploaded the
+zipped filder with all files and dependencies to AWS and created a **Cloud Watch Event** to trigger.
+Read more about lambda functions [here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html).
 
-## Built With
+## Built using
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- [Python 3.8.2](https://www.python.org/)
+- [News API](https://newsapi.org/)
+- [Twilio](https://www.twilio.com/)
+- [AWS Lambda](https://us-east-2.console.aws.amazon.com/lambda/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+- **Inspiration**: [I Wrote a Script to WhatsApp My Parents Every Morning in Just 20 Lines of Python Code](https://medium.com/better-programming/i-wrote-a-script-to-whatsapp-my-parents-every-morning-in-just-20-lines-of-python-code-5d203c3b36c1)
