@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="Logo" src="https://github.com/isafloriano/covid-good-news-bot/logo-covid-19-bot.png">
+</p>
+
 # COVID-19 Good News Bot
 
 <p align="center">
@@ -14,11 +18,15 @@ a little bit the other ones?
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This is a simple Python script to send a WhatsApp message using News API and Twilio sandbox.  
+To run it every day at a certain time, I added the code on the AWS (Amazon Web Services) cloud.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+- [Python 3](https://www.python.org/) installed
+- Your API key from [News API](https://newsapi.org/)
+- Your sandbox settings from [Twilio](https://www.twilio.com/)
+- [AWS]()
 
 ```
 Give examples
