@@ -1,8 +1,6 @@
-<p align="center">
+<h1 align="center">
   <img alt="Logo" src="./logo-covid-19-bot.png">
-</p>
-
-# COVID-19 Good News Bot
+</h1>
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/python-3.8.2-brightgreen">
